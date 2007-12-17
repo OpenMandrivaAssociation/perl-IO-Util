@@ -12,7 +12,6 @@ BuildRequires:	perl-devel
 BuildRequires:	perl-Test-Pod
 BuildRequires:	perl-Test-Pod-Coverage
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 This is a micro-weight module that exports a few functions of general utility
