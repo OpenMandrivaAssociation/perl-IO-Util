@@ -1,33 +1,35 @@
-%define real_name IO-Util
+%define upstream_name    IO-Util
+%define upstream_version 1.5
+
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
 
 Summary:	A selection of general-utility IO function
-Name:		perl-%{real_name}
-Version:	1.5
-Release:	%mkrel 4
-License:	GPL or Artistic
+License:	GPL+ or Artistic
 Group:		Development/Perl
-URL:		http://search.cpan.org/dist/%{real_name}
-Source0:	http://search.cpan.org/CPAN/authors/id/D/DO/DOMIZIO/%{real_name}-%{version}.tar.bz2
-BuildRequires:	perl-devel
-BuildRequires:	perl-Test-Pod
-BuildRequires:	perl-Test-Pod-Coverage
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://search.cpan.org/CPAN/authors/id/D/DO/DOMIZIO/%{upstream_name}-%{upstream_version}.tar.bz2
+
+BuildRequires:	perl(Test::Pod)
+BuildRequires:	perl(Test::Pod::Coverage)
+
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 This is a micro-weight module that exports a few functions of general utility
 in IO operations.
 
 %prep
-
-%setup -q -n %{real_name}-%{version} 
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
 %make
 
 %check
-make test
+%make test
 
 %install
 rm -rf %{buildroot}
