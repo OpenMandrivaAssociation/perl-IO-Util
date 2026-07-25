@@ -2,14 +2,14 @@
 %define upstream_version 1.5
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	4
+Version:	%{upstream_version}
+Release:	5
 
 Summary:	A selection of general-utility IO function
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	http://search.cpan.org/CPAN/authors/id/D/DO/DOMIZIO/%{upstream_name}-%{upstream_version}.tar.bz2
+Url:		https://metacpan.org/dist/IO-Util
+Source0:	https://cpan.metacpan.org/authors/id/D/DO/DOMIZIO/IO-Util-%{upstream_version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
